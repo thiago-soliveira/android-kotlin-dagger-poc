@@ -1,4 +1,4 @@
-package dagger.poc.android.daggerpoc
+package dagger.poc.android
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("dagger.poc.android.daggerpoc", appContext.packageName)
+        assertEquals("dagger.poc.android", appContext.packageName)
     }
 }

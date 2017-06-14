@@ -1,4 +1,4 @@
-package dagger.poc.android.daggerpoc
+package dagger.poc.android
 
 import org.junit.Test
 
