@@ -1,17 +1,14 @@
-package dagger.poc.android
+package dagger.poc.android.presentation
 
-import android.content.SharedPreferences
-import dagger.android.AndroidInjection
-import dagger.poc.android.common.BaseActivity
-import javax.inject.Inject
+import android.support.v4.app.Fragment
 
-class MainActivity : BaseActivity() {
+class MainActivity : dagger.poc.android.common.BaseActivity() {
 
-    @Inject
-    lateinit var preferences: SharedPreferences
+    @javax.inject.Inject
+    lateinit var preferences: android.content.SharedPreferences
 
     override fun inject() {
-        AndroidInjection.inject(this)
+        dagger.android.AndroidInjection.inject(this)
     }
 
     private var mTextMessage: android.widget.TextView? = null
@@ -38,7 +35,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(dagger.poc.android.R.layout.activity_main)
 
-        var selectedFragment: android.support.v4.app.Fragment = MyFragment()
+        var selectedFragment: Fragment = MyFragment()
         var transaction = supportFragmentManager.beginTransaction()
         transaction.replace(dagger.poc.android.R.id.frame_layout, selectedFragment)
         transaction.commit()
