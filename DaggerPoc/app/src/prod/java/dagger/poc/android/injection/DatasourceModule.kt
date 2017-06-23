@@ -14,7 +14,7 @@ internal abstract class DatasourceModule {
 
     @Binds
     @RemoteDataSource
-    internal abstract fun someRemoteDataSource(someDataSource: SomeFakeDataSource):
+    internal abstract fun someRemoteDataSource(someDataSource: SomeRemoteDataSource):
             SomeDataSource
 
     @Binds

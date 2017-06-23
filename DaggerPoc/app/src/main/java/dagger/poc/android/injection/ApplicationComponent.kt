@@ -13,7 +13,8 @@ import dagger.poc.android.DaggerPocApplication
 @Component(modules = arrayOf(
         ApplicationModule::class,
         AndroidBindingModule::class,
-        AndroidSupportInjectionModule::class)
+        AndroidSupportInjectionModule::class,
+        DatasourceModule::class)
 )
 interface ApplicationComponent : AndroidInjector<DaggerPocApplication> {
 

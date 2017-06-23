@@ -1,4 +1,4 @@
-package dagger.poc.android.common
+package dagger.poc.android.injection
 
 import javax.inject.Qualifier
 
@@ -8,4 +8,4 @@ import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
-annotation class LocalDatasource
+annotation class RemoteDataSource
