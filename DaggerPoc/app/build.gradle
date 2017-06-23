@@ -20,6 +20,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        mock {
+            applicationIdSuffix = ".mock"
+            resValue "string", "app_name", "DaggerPOC Mock"
+            dimension = "app"
+        }
+        prod {
+            resValue "string", "app_name", "DaggerPOC"
+            dimension = "app"
+        }
+    }
 }
 
 kapt {
