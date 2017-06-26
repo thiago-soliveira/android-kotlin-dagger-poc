@@ -1,6 +1,8 @@
 package dagger.poc.android.presentation
 
+import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
+import dagger.poc.android.R
 
 class MainActivity : dagger.poc.android.common.BaseActivity() {
 
@@ -13,18 +15,18 @@ class MainActivity : dagger.poc.android.common.BaseActivity() {
 
     private var mTextMessage: android.widget.TextView? = null
 
-    private val mOnNavigationItemSelectedListener = android.support.design.widget.BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            dagger.poc.android.R.id.navigation_home -> {
-                mTextMessage!!.setText(dagger.poc.android.R.string.title_home)
+            R.id.navigation_home -> {
+                mTextMessage!!.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
-            dagger.poc.android.R.id.navigation_dashboard -> {
-                mTextMessage!!.setText(dagger.poc.android.R.string.title_dashboard)
+            R.id.navigation_dashboard -> {
+                mTextMessage!!.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
-            dagger.poc.android.R.id.navigation_notifications -> {
-                mTextMessage!!.setText(dagger.poc.android.R.string.title_notifications)
+            R.id.navigation_notifications -> {
+                mTextMessage!!.setText(R.string.title_notifications)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -35,7 +37,7 @@ class MainActivity : dagger.poc.android.common.BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(dagger.poc.android.R.layout.activity_main)
 
-        var selectedFragment: Fragment = MyFragment()
+        var selectedFragment: Fragment = SomeFragment()
         var transaction = supportFragmentManager.beginTransaction()
         transaction.replace(dagger.poc.android.R.id.frame_layout, selectedFragment)
         transaction.commit()

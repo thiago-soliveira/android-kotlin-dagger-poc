@@ -5,7 +5,7 @@ import dagger.poc.android.R
 import dagger.poc.android.common.BaseFragment
 import javax.inject.Inject
 
-class MyFragment : BaseFragment() {
+class SomeFragment : BaseFragment() {
 
     @Inject
     lateinit var presenter : SomePresenter
@@ -18,7 +18,8 @@ class MyFragment : BaseFragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: android.view.LayoutInflater?, container: android.view.ViewGroup?,
+    override fun onCreateView(inflater: android.view.LayoutInflater?,
+                              container: android.view.ViewGroup?,
                               savedInstanceState: android.os.Bundle?): android.view.View? {
         return inflater!!.inflate(R.layout.fragment_my, container, false)
     }

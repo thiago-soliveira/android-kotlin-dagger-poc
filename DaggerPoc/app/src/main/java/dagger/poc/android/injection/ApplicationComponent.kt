@@ -14,7 +14,7 @@ import dagger.poc.android.DaggerPocApplication
         ApplicationModule::class,
         AndroidBindingModule::class,
         AndroidSupportInjectionModule::class,
-        DatasourceModule::class)
+        DataSourceModule::class)
 )
 interface ApplicationComponent : AndroidInjector<DaggerPocApplication> {
 

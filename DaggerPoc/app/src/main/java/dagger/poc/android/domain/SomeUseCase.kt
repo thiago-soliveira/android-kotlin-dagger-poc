@@ -16,6 +16,9 @@ class SomeUseCase @Inject constructor(someRepository: SomeRepository) {
 
     fun execute() {
         Log.d("DaggerPOC", "SomeUseCase called - instance: " + hashCode())
-        someRepository.getSomething()
+        Thread({
+            someRepository.getSomething()
+        }).start()
+
     }
 }
