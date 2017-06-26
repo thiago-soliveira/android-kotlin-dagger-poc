@@ -3,7 +3,7 @@ package dagger.poc.android.injection
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dagger.poc.android.presentation.MainActivity
-import dagger.poc.android.presentation.MyFragment
+import dagger.poc.android.presentation.SomeFragment
 
 /**
  * Created by Thiago on 6/14/2017.
@@ -14,7 +14,7 @@ internal abstract class AndroidBindingModule {
 
     @ContributesAndroidInjector
     @ActivityScope
-    internal abstract fun myFragment(): MyFragment
+    internal abstract fun someFragment(): SomeFragment
 
     @ContributesAndroidInjector
     @ActivityScope

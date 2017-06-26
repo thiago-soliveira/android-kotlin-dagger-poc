@@ -10,15 +10,15 @@ import dagger.poc.android.data.SomeLocalDataSource
  */
 
 @Module
-internal abstract class DatasourceModule {
+internal abstract class DataSourceModule {
 
     @Binds
-    @RemoteDataSource
+    @RemoteQualifier
     internal abstract fun someRemoteDataSource(someDataSource: SomeRemoteDataSource):
             SomeDataSource
 
     @Binds
-    @LocalDataSource
+    @LocalQualifier
     internal abstract fun someLocalDataSource(someLocalDataSource: SomeLocalDataSource):
             SomeDataSource
 
