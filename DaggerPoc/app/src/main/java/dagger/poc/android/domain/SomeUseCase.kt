@@ -19,6 +19,5 @@ class SomeUseCase @Inject constructor(someRepository: SomeRepository) {
         Thread({
             someRepository.getSomething()
         }).start()
-
     }
 }
