@@ -4,6 +4,9 @@ import android.util.Log
 import dagger.poc.android.data.SomeDataSource
 import dagger.poc.android.data.model.Answer
 import dagger.poc.android.data.model.User
+import io.reactivex.Flowable
+import io.reactivex.Scheduler
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 /**
@@ -15,8 +18,8 @@ class SomeFakeDataSource @Inject constructor() : SomeDataSource {
         return 0
     }
 
-    override fun getAllAnswers(): List<Answer> {
-        return arrayListOf(Answer(0))
+    override fun getAllAnswers(): Flowable<List<Answer>> {
+        return Flowable.just(listOf(Answer(0))).subscribeOn(Schedulers.io())
     }
 
     override fun createUser(user: User): Long {

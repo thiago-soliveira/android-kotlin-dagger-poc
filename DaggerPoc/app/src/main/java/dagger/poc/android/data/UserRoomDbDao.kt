@@ -3,6 +3,7 @@ package dagger.poc.android.data
 import android.arch.persistence.room.*
 import dagger.poc.android.data.model.Answer
 import dagger.poc.android.data.model.User
+import io.reactivex.Flowable
 
 /**
  * Created by Thiago on 6/26/2017.

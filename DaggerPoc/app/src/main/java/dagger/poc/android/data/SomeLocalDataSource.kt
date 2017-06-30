@@ -3,6 +3,8 @@ package dagger.poc.android.data
 import android.util.Log
 import dagger.poc.android.data.model.Answer
 import dagger.poc.android.data.model.User
+import io.reactivex.Flowable
+import io.reactivex.Observable
 import javax.inject.Inject
 
 /**
@@ -21,7 +23,7 @@ class SomeLocalDataSource @Inject constructor(roomDb: RoomDatabaseBuilder) : Som
         return answerDbDao.create(answer)
     }
 
-    override fun getAllAnswers(): List<Answer> {
+    override fun getAllAnswers(): Flowable<List<Answer>> {
         return answerDbDao.findAll()
     }
 
