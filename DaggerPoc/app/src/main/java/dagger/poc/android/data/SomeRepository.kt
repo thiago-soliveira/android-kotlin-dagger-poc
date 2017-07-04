@@ -6,6 +6,7 @@ import dagger.poc.android.data.model.User
 import dagger.poc.android.injection.LocalQualifier
 import dagger.poc.android.injection.RemoteQualifier
 import dagger.poc.android.injection.ApplicationScope
+import io.reactivex.Flowable
 import javax.inject.Inject
 
 /**
@@ -19,16 +20,24 @@ class SomeRepository @Inject constructor(@LocalQualifier val localDataSource: So
     fun getSomething() {
         Log.d("DaggerPOC", "SomeRepository called - instance: " + hashCode())
 
-        if (localDataSource.getAllAnswers().isEmpty()) {
-            val userId = localDataSource.createUser(User())
-            localDataSource.createAnswer(Answer(userId))
-        }
-
-        val allAnswers = localDataSource.getAllAnswers()
-
-        Log.d("DaggerPOC", "SomeRepository - all answers: " + allAnswers.toString())
+//        if (localDataSource.getAllAnswers().isEmpty()) {
+//            val userId = localDataSource.createUser(User())
+//            localDataSource.createAnswer(Answer(userId))
+//        }
+//
+//        val allAnswers = localDataSource.getAllAnswers()
+//
+//        Log.d("DaggerPOC", "SomeRepository - all answers: " + allAnswers.toString())
 
         localDataSource.getSomething()
         remoteDataSource.getSomething()
+    }
+
+    fun createUser(user: User): Long {
+        return localDataSource.createUser(user)
+    }
+
+    fun getAllAnswers(): Flowable<List<Answer>> {
+        return remoteDataSource.getAllAnswers()
     }
 }
