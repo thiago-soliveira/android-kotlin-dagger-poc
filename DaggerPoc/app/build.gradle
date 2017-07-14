@@ -62,4 +62,7 @@ dependencies {
     kapt "android.arch.persistence.room:compiler:$rootProject.roomVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+
+    implementation project(':core')
+    kapt project(':processor')
 }

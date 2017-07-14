@@ -2,8 +2,10 @@ package dagger.poc.android.presentation
 
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
+import com.sup3rnova.android.core.annotation.Injectable
 import dagger.poc.android.R
 
+@Injectable
 class MainActivity : dagger.poc.android.common.BaseActivity() {
 
     @javax.inject.Inject
